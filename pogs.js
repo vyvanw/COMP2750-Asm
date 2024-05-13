@@ -124,8 +124,8 @@ export default function App() {
       marginTop:10
     },
     row2:{
-    flexDirection: 'row',
-    marginTop: 10,
+      flexDirection: 'row',
+      marginTop: 10,
   },
     picker1:{
       flex:1
