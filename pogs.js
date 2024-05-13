@@ -12,6 +12,9 @@ export default function App() {
 
   return (
   <SafeAreaView style={styles.container}>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+      </style>
       <View style={styles.row1}>
         <Text style={styles.heading}> POGS Online Shopping </Text>
       </View>
@@ -101,17 +104,25 @@ export default function App() {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#ffffcc',
+      backgroundImage: 'linear-gradient(0.175turn ,#ff0000, #0000ff, #00ff00)',
     },
     heading: {
       fontSize:26,
       textAlign: 'center',
-      marginTop: 50
+      marginTop: 50,
+      fontFamily: "VT323",
+      fontWeight: 400,
+      fontStyle: 'normal',
+      color: '#ffffff'
     }, 
     price:{
       fontSize:18,
       textAlign:'center',
-      marginTop: 10
+      marginTop: 10,
+      fontFamily: "VT323",
+      fontWeight: 400,
+      fontStyle: 'normal',
+      color: '#ffffff'
     },
     image: {
       width: 150,
@@ -121,7 +132,11 @@ export default function App() {
       alignSelf: 'center'
     }, 
     row1:{
-      marginTop:10
+      marginTop:10,
+      fontFamily: "VT323",
+      fontWeight: 400,
+      fontStyle: 'normal',
+      color: '#ffffff'
     },
     row2:{
       flexDirection: 'row',
