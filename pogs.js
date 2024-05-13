@@ -16,6 +16,10 @@ export default function App() {
         <Text style={styles.heading}> POGS Online Shopping </Text>
       </View>
 
+      <View>
+        <Image source={require('/veg.png')} style={styles.image} />
+      </View>
+
       <View style={styles.row2}>
         <Picker
           style={styles.picker1}
@@ -83,7 +87,7 @@ export default function App() {
          />
       </View>
       <View style={styles.row1}>
-        <Text style={styles.price}> {totalPrice} </Text>
+        <Text style={styles.price}>Total Cost of Order: ${totalPrice} </Text>
       </View>
 
       <View style={styles.footer}>
@@ -133,6 +137,7 @@ export default function App() {
       marginTop: 30,
       marginBottom:30,
       color: '#228B22', //note: how to change color?
+      // backgroundColor: '#HEX'
   },
     footer: {
       paddingTop: 370,
