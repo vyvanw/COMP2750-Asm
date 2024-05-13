@@ -87,7 +87,7 @@ export default function App() {
          />
       </View>
       <View style={styles.row1}>
-        <Text style={styles.price}> {totalPrice} </Text>
+        <Text style={styles.price}>Total Cost of Order: ${totalPrice} </Text>
       </View>
 
       <View>
