@@ -141,7 +141,7 @@ export default function App() {
   },
     footer: {
       margin: 10,
-      paddingTop: 370,
+      paddingTop: 160,
     }
 
   });
