@@ -120,21 +120,22 @@ export default function App() {
       marginTop:10
     },
     row2:{
-    flexDirection: 'row',
-    marginTop: 10,
-  },
+      flexDirection: 'row',
+      marginTop: 10,
+    },
     picker1:{
       flex:1
-  },
+    },
     picker2:{
       flex:1
-  },
+    },
     button:{
       marginTop: 30,
       marginBottom:30,
       color: '#228B22', //note: how to change color?
   },
     footer: {
+      margin: 10,
       paddingTop: 370,
     }
 
