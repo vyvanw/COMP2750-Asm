@@ -16,10 +16,6 @@ export default function App() {
         <Text style={styles.heading}> POGS Online Shopping </Text>
       </View>
 
-      <View>
-        <Image source={require('/veg.png')} style={styles.image} />
-      </View>
-
       <View style={styles.row2}>
         <Picker
           style={styles.picker1}
@@ -87,10 +83,10 @@ export default function App() {
          />
       </View>
       <View style={styles.row1}>
-        <Text style={styles.price}>Total Cost of Order: ${totalPrice} </Text>
+        <Text style={styles.price}> {totalPrice} </Text>
       </View>
 
-      <View>
+      <View style={styles.footer}>
         <Text>App developed by Jerold Cortez, Benjamin Swinbourne, Alexander Wilson, Canh Yen Vy Van</Text>
       </View>
 
@@ -124,8 +120,8 @@ export default function App() {
       marginTop:10
     },
     row2:{
-      flexDirection: 'row',
-      marginTop: 10,
+    flexDirection: 'row',
+    marginTop: 10,
   },
     picker1:{
       flex:1
@@ -137,5 +133,9 @@ export default function App() {
       marginTop: 30,
       marginBottom:30,
       color: '#228B22', //note: how to change color?
+  },
+    footer: {
+      paddingTop: 370,
     }
+
   });
