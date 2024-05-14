@@ -54,6 +54,7 @@ export default function App() {
           selectedValue={quantityVegetable}
           onValueChange={(itemValue, itemIndex) => setQuantityVegetable(itemValue)}
         >
+            <Picker.Item label="0" value='0' />
             <Picker.Item label="1" value='1' />
             <Picker.Item label="2" value="2" />
             <Picker.Item label="3" value="3" />
@@ -66,6 +67,7 @@ export default function App() {
           selectedValue={quantityFruit}
           onValueChange={(itemValue, itemIndex) => setQuantityFruit(itemValue)}
         >
+            <Picker.Item label="0" value='0' />
             <Picker.Item label="1" value='1' />
             <Picker.Item label="2" value="2" />
             <Picker.Item label="3" value="3" />
@@ -94,7 +96,9 @@ export default function App() {
       </View>
 
       <View style={styles.footer}>
-        <Text>App developed by Jerold Cortez, Benjamin Swinbourne, Alexander Wilson, Canh Yen Vy Van</Text>
+        <Text style={styles.footerText}>App developed by: </Text> 
+        <Text style={styles.footerText}>Jerold Cortez, Benjamin Swinbourne </Text>
+        <Text style={styles.footerText}>Alexander Wilson and Canh Yen Vy Van </Text>
       </View>
 
 
@@ -104,7 +108,9 @@ export default function App() {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundImage: 'linear-gradient(0.175turn ,#ff0000, #0000ff, #00ff00)',
+      backgroundImage: 'linear-gradient(0.175turn ,#d3d3d3, #000000, #d3d3d3)',
+      paddingLeft: 10,
+      paddingRight: 10
     },
     heading: {
       fontSize:26,
@@ -156,7 +162,10 @@ export default function App() {
   },
     footer: {
       margin: 10,
-      paddingTop: 160,
+      paddingTop: 140,
+    },
+    footerText: {
+      color: '#ffffff',
+      alignSelf: 'center'
     }
-
   });
