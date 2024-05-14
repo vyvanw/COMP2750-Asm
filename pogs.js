@@ -162,10 +162,13 @@ export default function App() {
   },
     footer: {
       margin: 10,
-      paddingTop: 140,
+      paddingTop: 130,
     },
     footerText: {
       color: '#ffffff',
-      alignSelf: 'center'
+      alignSelf: 'center',
+      fontFamily: "VT323",
+      fontWeight: 400,
+      fontSize: 20
     }
   });
