@@ -1,6 +1,8 @@
 import React, {useState} from "react";
-import {SafeAreaView, View, Text, StyleSheet, Button, Image} from 'react-native';
+import {SafeAreaView, View, Text, StyleSheet, Image, Pressable} from 'react-native';
 import {Picker} from '@react-native-picker/picker'; 
+import { useFonts } from 'expo-font';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function App() {
 
@@ -10,11 +12,17 @@ export default function App() {
   const [quantityFruit, setQuantityFruit] = useState('1');
   const [totalPrice, setTotalPrice] = useState("0");
 
+  const [fontsLoaded] = useFonts({
+    'VT323-Regular': require('./assets/fonts/VT323-Regular.ttf'),
+  });
+
   return (
-  <SafeAreaView style={styles.container}>
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-      </style>
+    <LinearGradient
+        colors={['#C7CBC5', '#C6F7A7', '#C7CBC5']}
+        style={styles.container}
+    >
+      <SafeAreaView style={styles.container}>
+  
       <View style={styles.row1}>
         <Text style={styles.heading}> POGS Online Shopping </Text>
       </View>
@@ -54,7 +62,7 @@ export default function App() {
           selectedValue={quantityVegetable}
           onValueChange={(itemValue, itemIndex) => setQuantityVegetable(itemValue)}
         >
-            <Picker.Item label="0" value='0' />
+            <Picker.Item label="0" value="0" />
             <Picker.Item label="1" value='1' />
             <Picker.Item label="2" value="2" />
             <Picker.Item label="3" value="3" />
@@ -67,7 +75,7 @@ export default function App() {
           selectedValue={quantityFruit}
           onValueChange={(itemValue, itemIndex) => setQuantityFruit(itemValue)}
         >
-            <Picker.Item label="0" value='0' />
+            <Picker.Item label="0" value="0" />
             <Picker.Item label="1" value='1' />
             <Picker.Item label="2" value="2" />
             <Picker.Item label="3" value="3" />
@@ -77,9 +85,8 @@ export default function App() {
       </View>
 
       <View style={styles.row1}>
-        <Button 
+        <Pressable 
         style={styles.button}
-        title="CALCULATE"
         onPress={() => {
           const lastChar = selectedVegetable[selectedVegetable.length -1];
           const lastTwoChar = selectedFruit.slice(-2);
@@ -87,12 +94,15 @@ export default function App() {
           const charToIntForFruits = parseInt(lastTwoChar);
           const quantityVeg = parseInt(quantityVegetable);
           const quantityFruits = parseInt(quantityFruit)
-          setTotalPrice(lastChar * quantityVeg + lastTwoChar *quantityFruits);
+          setTotalPrice(charToIntForVegetables * quantityVeg + charToIntForFruits *quantityFruits);
         }}
-         />
+         >
+      <Text style={styles.text}>CALCULATE</Text>
+
+         </Pressable>
       </View>
       <View style={styles.row1}>
-        <Text style={styles.price}>Total Cost of Order: ${totalPrice} </Text>
+        <Text style={styles.text}>Total Cost of Order: ${totalPrice} </Text>
       </View>
 
       <View style={styles.footer}>
@@ -101,48 +111,47 @@ export default function App() {
         <Text style={styles.footerText}>Alexander Wilson and Canh Yen Vy Van </Text>
       </View>
 
+      </SafeAreaView>
+    </LinearGradient>
 
-  </SafeAreaView>
   );}
 
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundImage: 'linear-gradient(0.175turn ,#d3d3d3, #000000, #d3d3d3)',
       paddingLeft: 10,
       paddingRight: 10
     },
     heading: {
-      fontSize:26,
+      fontSize:32,
       textAlign: 'center',
       marginTop: 50,
-      fontFamily: "VT323",
+      fontFamily: "VT323-Regular",
       fontWeight: 400,
       fontStyle: 'normal',
-      color: '#ffffff'
+      color: '#006400'
     }, 
-    price:{
-      fontSize:18,
+    text:{
+      fontSize:24,
       textAlign:'center',
-      marginTop: 10,
-      fontFamily: "VT323",
+      fontFamily: "VT323-Regular",
       fontWeight: 400,
       fontStyle: 'normal',
-      color: '#ffffff'
+      color: '#006400'
     },
     image: {
-      width: 150,
-      height: 150,
-      marginBottom: 30,
+      width: 180,
+      height: 180,
+      marginBottom: 10,
       marginTop: 30,
       alignSelf: 'center'
     }, 
     row1:{
       marginTop:10,
-      fontFamily: "VT323",
+      fontFamily: "VT323-Regular",
       fontWeight: 400,
       fontStyle: 'normal',
-      color: '#ffffff'
+      color: '#006400'
     },
     row2:{
       flexDirection: 'row',
@@ -155,20 +164,24 @@ export default function App() {
       flex:1
     },
     button:{
-      marginTop: 30,
-      marginBottom:30,
-      color: '#228B22', //note: how to change color?
-      // backgroundColor: '#HEX'
-  },
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 32,
+      borderRadius: 4,
+      elevation: 3,
+      backgroundColor: '#DFFDD0',
+    },
     footer: {
       margin: 10,
-      paddingTop: 130,
+      paddingTop: 110,
     },
     footerText: {
-      color: '#ffffff',
+      color: '#00000',
       alignSelf: 'center',
-      fontFamily: "VT323",
+      fontFamily: "VT323-Regular",
       fontWeight: 400,
       fontSize: 20
     }
   });
+  
